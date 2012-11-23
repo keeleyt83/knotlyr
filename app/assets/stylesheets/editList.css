@@ -1,0 +1,29 @@
+/* from jsfiddle */
+
+ul#itemList {
+	width: 25%;
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+
+ul#itemList > li {
+  background-color: #E0E0E0;
+  margin-bottom: 5px;
+  line-height: 25px;
+  list-style-type: none;
+  padding: 0 5px;
+}
+
+ul#itemList > li > button { }
+
+ul#itemList > li > a {
+  float: right;
+  text-decoration: none;
+  vertical-align: middle;
+  text-align: center;
+  width: 20px;
+}
+
+ul#itemList > li > a:hover {
+  background-color: darkgrey;
+}

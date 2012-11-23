@@ -1,10 +1,33 @@
+<%= stylesheet_link_tag    "editList", :media => "all" %>
+<%= javascript_include_tag "editList" %>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @list.name %>
-</p>
+<h1><%= @list.name %></h1>
 
+<div id="listWrapper">
+  <ul id="itemList">
+    <% if @list.items.empty? %>
+      <li id="emptyItem">List is empty.</li>
+    <% else %>
+      <!-- TODO: ajaxify delete -->
+      <% @list.items.each do |item| %>
+          <li id="item-<%= item.id %>"><span class="itemName"><%= item.name %></span><%= link_to 'X', item, method: :delete %></li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+<div id="addNewItemWrapper">
+  <input type="text" id="addItemName"/><button id="addItemBtn">Add</button>
+</div>
 
-<%= link_to 'Edit', edit_list_path(@list) %> |
-<%= link_to 'Back', lists_path %>
+<!--
+  TODO:
+  -create template for pages
+  -default root to list index
+  -dropdown with all lists
+  -url using list name
+  -listener to button on enter.
+  -autocomplete based on past items on this list.
+    +don't delete items, just remove them
+ -->
