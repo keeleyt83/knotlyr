@@ -1,4 +1,6 @@
 class ListsController < ApplicationController
+  # TODO: remove a lot of these default paths.
+
   # GET /lists
   # GET /lists.json
   def index
@@ -14,6 +16,7 @@ class ListsController < ApplicationController
   # GET /lists/1.json
   def show
     @list = List.find(params[:id])
+    @lists = List.all
 
     respond_to do |format|
       format.html # show.html.erb

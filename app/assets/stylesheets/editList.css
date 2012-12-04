@@ -1,17 +1,36 @@
 /* from jsfiddle */
 
+button.deleteItem {
+  float: right;
+}
+
+div#addNewItemWrapper {
+  margin-bottom: 20px;
+}
+
+select#lists {
+  margin-bottom: 20px;
+  font-size: 13px;
+  border-color: #999;
+  width: 100%;
+}
+
 ul#itemList {
-	width: 25%;
   margin: 0 0 20px 0;
   padding: 0;
+  border-left: 2px solid lightgray;
+  border-right: 2px solid lightgray;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
 }
 
 ul#itemList > li {
-  background-color: #E0E0E0;
-  margin-bottom: 5px;
+  background-color: #e9e9e9;
   line-height: 25px;
   list-style-type: none;
   padding: 0 5px;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
 }
 
 ul#itemList > li > button { }
@@ -26,4 +45,15 @@ ul#itemList > li > a {
 
 ul#itemList > li > a:hover {
   background-color: darkgrey;
+}
+
+input#addItemName {
+  width: 79%;
+}
+
+button#addItemBtn {
+  /* TODO fix button width when page shrinks. */
+  width: 15%;
+  min-width: 41px;
+  margin-left: 10px;
 }

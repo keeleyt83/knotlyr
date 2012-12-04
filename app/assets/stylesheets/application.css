@@ -11,3 +11,14 @@
  *= require_self
  *= require_tree .
  */
+
+div#content {
+  width: 25%;
+}
+
+h1#pageTitle {
+  font-family: 'Mrs Saint Delafield', cursive;
+  font-size: 35px;
+  border-bottom: 3px solid lightBlue;
+  padding-left: 5px;
+}
