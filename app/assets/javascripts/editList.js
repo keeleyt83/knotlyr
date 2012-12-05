@@ -5,7 +5,6 @@
 
 /*
   TODO:
-    - use selected option.
     - autocomplete
     - change in select goes to page.
 */
@@ -13,6 +12,8 @@
 var editList = {
 
   init:function() {
+    $("#addItemName").focus();
+
     $("#addItemName").keypress(function(e) {
       if (e.which == 13) {
         editList.addItem();
@@ -29,21 +30,23 @@ var editList = {
     });
 
     $("#itemList li").on("click", "button.deleteItem", function() {
-      $.get("../items/" + $(this).parent().attr("id").split("-")[1] + "/delete", [], function(){
-        console.log("hello");
+      var itemId = + $(this).parent().attr("id").split("-")[1];
+      $.destroy({ url: '/items/' + itemId, success: function(response) {
+          $("li#item-" + itemId).remove();
+        }
       });
     });
   },
 
   addItem: function() {
-    $.post("../items/",  { "item" : { "list_id" : $("#lists").val(),  "name" : $("#addItemName").val() } },
-        function(data) {
+    $.create("/items/", { item : { list_id : $("#lists").val(),  name : $("#addItemName").val() } },
+        function(response) {
       $("#emptyItem").remove();
       // Create new item.
       $("#itemList")
-        .append($("<li id='item-" + data.id + "'>")
+        .append($("<li id='item-" + response.id + "'>")
           .append($("<span class='itemName'>")
-            .append(data.name))
+            .append(response.name))
           .append("<button class='deleteItem'>X</button>"));
     }, "json");
     $("#addItemName").val("");
@@ -52,44 +55,4 @@ var editList = {
 
 $(document).ready(function(){
   editList.init();
-  $("#addItemName").focus();
 });
-
-/* from jsfiddle */
-/*
-$(document).ready(function() {
-  $("#add").click(function() {
-      $("#addDialog").dialog("open");
-  });
-
-  $("#addDialog").dialog({
-      autoOpen: false,
-      resizable: false,
-      modal: true,
-      title: "Add",
-      close: function(event, ui) {
-          $("#itemName").val("");
-      },
-      buttons: {
-          Add: function() {
-              // Delete the empty item
-              $("#emptyItem").remove();
-              // Create our item
-              $("#groceries")
-                  .append($("<div>")
-                      .append($("#itemName").val())
-                      .append("<button class='deleteItem'>X</button>"));
-
-              $(this).dialog("close");
-          },
-          Cancel: function() {
-              $(this).dialog("close");
-          }
-      }
-  });
-
-  $("#groceries").on("click", "button.deleteItem", function() {
-      $(this).parent().remove();
-  });
-});​*/
-
