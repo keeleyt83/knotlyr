@@ -5,8 +5,10 @@
 
 /*
   TODO:
+    - delete default css, js files.
     - autocomplete
-    - change in select goes to page.
+    - http://amillionbetterthings.com/2010/06/24/rails-nested-forms-with-ajax-add-and-remove/
+    - mobile is frakked? http://stackoverflow.com/questions/8069131/using-jquery-mobile-and-rails-restful-controller-actions
 */
 
 var editList = {
@@ -26,20 +28,26 @@ var editList = {
     });
 
     $("#lists").change(function() {
-      window.location.href=$("#lists").val();
+      window.location.href="/lists/" + $("#lists").val();
     });
 
-    $("#itemList li").on("click", "button.deleteItem", function() {
+    $("#itemList").on("click", "button.deleteItem", function() {
       var itemId = + $(this).parent().attr("id").split("-")[1];
-      $.destroy({ url: '/items/' + itemId, success: function(response) {
+      var listId = $("#lists").val();
+      $.destroy({ url: "/lists/" + listId + "/items/" + itemId, success: function(response) {
           $("li#item-" + itemId).remove();
+          if( $("#itemList").children().length == 0 ) {
+            $("#itemList")
+              .append("<li id='emptyItem'>List is empty.</li>");
+          }
         }
       });
     });
   },
 
   addItem: function() {
-    $.create("/items/", { item : { list_id : $("#lists").val(),  name : $("#addItemName").val() } },
+    var listId = $("#lists").val();
+    $.create("/lists/" + listId + "/items/", { item : { list_id : listId,  name : $("#addItemName").val() } },
         function(response) {
       $("#emptyItem").remove();
       // Create new item.

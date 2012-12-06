@@ -1,7 +1,11 @@
 ShopList::Application.routes.draw do
-  resources :items
+  root :to => 'lists#show'
 
-  resources :lists
+  match 'lists(/:id)' => 'lists#show'
+
+  resources :lists do
+    resources :items
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,22 +1,18 @@
 class ListsController < ApplicationController
-  # TODO: remove a lot of these default paths.
-
-  # GET /lists
-  # GET /lists.json
-  def index
-    @lists = List.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @lists }
-    end
-  end
+  # TODO:
+  #   -remove a lot of these default paths.
+  #   -http://stackoverflow.com/questions/10873271/collecting-first-segments-of-all-routes-in-rails-3
 
   # GET /lists/1
   # GET /lists/1.json
   def show
-    @list = List.find(params[:id])
-    @lists = List.all
+    @lists = List.all.sort_by{|list| list[:name]}
+
+    if params[:id].present?
+      @list = List.find(params[:id])
+    else
+      @list = @lists.first
+    end
 
     respond_to do |format|
       format.html # show.html.erb
