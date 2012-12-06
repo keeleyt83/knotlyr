@@ -1,5 +1,5 @@
 ShopList::Application.routes.draw do
-  root :to => 'lists#show', :constraints => { :id => /\d.+/ }
+  #root :to => 'lists#show'
   match 'lists(/:id)' => 'lists#show', :constraints => { :id => /\d.+/ }
 
   resources :lists do
