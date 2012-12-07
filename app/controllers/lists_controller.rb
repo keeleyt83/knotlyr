@@ -3,9 +3,8 @@ class ListsController < ApplicationController
   #   -remove a lot of these default paths.
   #   -http://stackoverflow.com/questions/10873271/collecting-first-segments-of-all-routes-in-rails-3
 
-  # GET /lists/1
-  # GET /lists/1.json
-  def show
+  # GET /lists/shop
+  def shop
     @lists = List.all.sort_by{|list| list[:name]}
 
     if params[:id].present?
@@ -13,6 +12,16 @@ class ListsController < ApplicationController
     else
       @list = @lists.first
     end
+
+    respond_to do |format|
+      format.html
+    end
+  end
+
+  # GET /lists/1
+  # GET /lists/1.json
+  def show
+    @list = List.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb

@@ -28,7 +28,7 @@ var editList = {
     });
 
     $("#lists").change(function() {
-      window.location.href="/lists/" + $("#lists").val();
+      window.location.href="/shop/" + $("#lists").val();
     });
 
     $("#itemList").on("click", "button.deleteItem", function() {

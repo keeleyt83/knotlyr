@@ -1,6 +1,7 @@
 ShopList::Application.routes.draw do
-  #root :to => 'lists#show'
-  #match 'lists(/:id)' => 'lists#show', :constraints => { :id => /\d+/ }
+  root :to => 'lists#shop'
+
+  match 'shop(/:id)' => 'lists#shop', :constraints => { :id => /\d+/ }
 
   resources :lists do
     resources :items
