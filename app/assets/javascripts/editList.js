@@ -5,6 +5,7 @@
 
 /*
   TODO:
+    - rename and move to show.
     - delete default css, js files.
     - autocomplete
     - http://amillionbetterthings.com/2010/06/24/rails-nested-forms-with-ajax-add-and-remove/
