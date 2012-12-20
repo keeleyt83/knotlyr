@@ -16,6 +16,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.save
+        #puts item_url
         format.json { render json: @item, status: :created, location: @item }
       else
         format.json { render json: @item.errors, status: :unprocessable_entity }
