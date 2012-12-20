@@ -1,5 +1,5 @@
 ShopList::Application.routes.draw do
-  root :to => 'lists#shop'
+  #root :to => 'lists#shop'
 
   match 'shop(/:id)' => 'lists#shop', :constraints => { :id => /\d+/ }
 
