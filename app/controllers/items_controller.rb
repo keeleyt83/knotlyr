@@ -1,6 +1,4 @@
 class ItemsController < ApplicationController
-  respond_to :json
-
   # POST /items
   # POST /items.json
   def create
@@ -8,12 +6,12 @@ class ItemsController < ApplicationController
 
     if @item.save
       respond_to do |format|
-        format.xml  { render :xml => @item}
         format.json { render :json => @item }
-#      respond_with(@item, status: :created)
       end
     else
-      respond_with(@item.errors, status: :unprocessable_entity)
+      respond_to do |format|
+        format.json { render :json => @item.errors, status: :unprocessable_entity}
+      end
     end
   end
 
@@ -23,6 +21,8 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @item.destroy
 
-    respond_with(@item)
+    respond_to do |format|
+      format.json { render :json => @item }
+    end
   end
 end
