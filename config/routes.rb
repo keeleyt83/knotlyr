@@ -3,9 +3,6 @@ ShopList::Application.routes.draw do
 
   match 'shop(/:id)' => 'lists#shop', :constraints => { :id => /\d+/ }
 
-  #resources :lists
-  #resources :items
-
   resources :lists do
     resources :items
   end

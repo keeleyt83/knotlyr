@@ -14,6 +14,17 @@ class ListsController < ApplicationController
     end
   end
 
+  # GET /lists
+  # GET /lists.json
+  def index
+    @lists = List.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @lists }
+    end
+  end
+
   # GET /lists/1
   # GET /lists/1.json
   def show
