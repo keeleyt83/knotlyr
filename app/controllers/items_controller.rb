@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  respond_to :html, :xml, :json
+  respond_to :xml, :json
 
   # POST /items
   # POST /items.json
