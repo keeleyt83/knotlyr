@@ -7,7 +7,11 @@ class ItemsController < ApplicationController
     @item = Item.new(params[:item])
 
     if @item.save
-      respond_with(@item)
+      respond_to do |format|
+        format.xml  { render :xml => @item}
+        format.json { render :json => @item }
+#      respond_with(@item, status: :created)
+      end
     else
       respond_with(@item.errors, status: :unprocessable_entity)
     end
