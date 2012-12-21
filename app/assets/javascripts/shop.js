@@ -46,7 +46,7 @@ var shop = {
 
   addItem: function() {
     var listId = $("#lists").val();
-    $.create("/lists/" + listId + "/items/", { item : { list_id : listId,  name : $("#addItemName").val() } },
+    $.create("/lists/" + listId + "/items.json", { item : { list_id : listId,  name : $("#addItemName").val() } },
         function(response) {
       $("#emptyItem").remove();
       // Create new item.
