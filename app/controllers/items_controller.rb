@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  respond_to :xml, :json
+  respond_to :json
 
   # POST /items
   # POST /items.json
@@ -7,7 +7,7 @@ class ItemsController < ApplicationController
     @item = Item.new(params[:item])
 
     if @item.save
-      respond_with(@item, status: :created)
+      respond_with(@item)
     else
       respond_with(@item.errors, status: :unprocessable_entity)
     end
