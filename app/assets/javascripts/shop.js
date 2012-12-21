@@ -46,7 +46,24 @@ var shop = {
 
   addItem: function() {
     var listId = $("#lists").val();
-    $.create("/lists/" + listId + "/items.json", { item : { list_id : listId,  name : $("#addItemName").val() } },
+
+    // $.ajax({
+    //   url: "/lists/" + listId + "/items.json",
+    //   dataType: "json",
+    //   type: "POST",
+    //   data: { item : { list_id : listId,  name : $("#addItemName").val() } },
+    //   success: function(response) {
+    //     $("#emptyItem").remove();
+    //     // Create new item.
+    //     $("#itemList")
+    //       .append($("<li id='item-" + response.id + "'>")
+    //         .append($("<span class='itemName'>")
+    //           .append(response.name))
+    //         .append("<button class='deleteItem'>X</button>"));
+    //   }
+    // });
+
+    $.create("/lists/" + listId + "/items/", { item : { list_id : listId,  name : $("#addItemName").val() } },
         function(response) {
       $("#emptyItem").remove();
       // Create new item.
