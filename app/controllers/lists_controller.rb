@@ -1,8 +1,4 @@
 class ListsController < ApplicationController
-  # TODO:
-  #   -remove a lot of these default paths.
-  #   -http://stackoverflow.com/questions/10873271/collecting-first-segments-of-all-routes-in-rails-3
-
   # GET /lists/shop
   def shop
     @lists = List.all.sort_by{|list| list[:name]}

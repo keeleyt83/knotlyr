@@ -7,7 +7,7 @@ ShopList::Application.routes.draw do
   #resources :items
 
   resources :lists do
-    resources :items
+    resources :items, defaults: {format: :json}
   end
 
   # The priority is based upon order of creation:
