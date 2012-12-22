@@ -1,31 +1,33 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name = "viewport" content = "width = 300, initial-scale = 1, user-scalable = no">
+<meta name = "viewport" content = "width = 320, initial-scale = 1, user-scalable = no">
 
-<div id="content">
-  <p id="notice"><%= notice %></p>
-  <h1 id="pageTitle">Knotlyr</h1>
+<div id="contentWrapper" style="border-color:<%=@list.color%>">
+  <div id="content">
+    <p id="notice"><%= notice %></p>
+    <h1 id="pageTitle">Knotlyr</h1>
 
-  <div id="selectListWrapper" style="border-color:<%=@list.color%>">
-  <%= select_tag "lists", options_from_collection_for_select(@lists, "id", "name", @list.id) %>
-  </div>
-
-  <div id="listWrapper">
-    <div id="addNewItemWrapper">
-      <input type="text" id="addItemName"/><button id="addItemBtn">Add</button>
+    <div id="selectListWrapper">
+    <%= select_tag "lists", options_from_collection_for_select(@lists, "id", "name", @list.id) %>
     </div>
-    <ul id="itemList">
-      <% if @list.items.empty? %>
-        <li id="emptyItem">List is empty.</li>
-      <% else %>
-        <!-- TODO: Create helper to create an item. -->
-        <% @list.items.each do |item| %>
-            <li id="item-<%= item.id %>">
-              <span class="itemName"><%= item.name %></span>
-              <button class='deleteItem'>X</button>
-            </li>
+
+    <div id="listWrapper">
+      <div id="addNewItemWrapper">
+        <input type="text" id="addItemName"/><button id="addItemBtn">Add</button>
+      </div>
+      <ul id="itemList">
+        <% if @list.items.empty? %>
+          <li id="emptyItem">List is empty.</li>
+        <% else %>
+          <!-- TODO: Create helper to create an item. -->
+          <% @list.items.each do |item| %>
+              <li id="item-<%= item.id %>">
+                <span class="itemName"><%= item.name %></span>
+                <button class='deleteItem'>X</button>
+              </li>
+          <% end %>
         <% end %>
-      <% end %>
-    </ul>
+      </ul>
+    </div>
   </div>
 </div>
 

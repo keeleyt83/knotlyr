@@ -1,8 +1,21 @@
-div#selectListWrapper {
-  padding: 2px;
-  border-width: 7px;
+div#contentWrapper {
+  margin: 5px;
+  border-width: 15px;
   border-style: solid;
-  border-radius: 7px;
+  width: 320px;
+}
+
+div#content {
+  min-height: 400px;
+  padding: 10px;
+  border: 2px solid #F7F5F3;
+}
+
+h1#pageTitle {
+  font-family: 'Mrs Saint Delafield', cursive;
+  font-size: 35px;
+  border-bottom: 3px solid lightBlue;
+  padding-left: 5px;
 }
 
 div#listWrapper {
@@ -18,9 +31,9 @@ div#addNewItemWrapper {
 }
 
 select#lists {
+  width: 100%;
   font-size: 13px;
   border-color: #999;
-  width: 100%;
 }
 
 ul#itemList {
@@ -56,12 +69,10 @@ ul#itemList > li > a:hover {
 }
 
 input#addItemName {
-  width: 79%;
+  width: 210px;
 }
 
 button#addItemBtn {
-  /* TODO fix button width when page shrinks. */
-  width: 15%;
-  min-width: 41px;
+  width: 70px;
   margin-left: 10px;
 }
