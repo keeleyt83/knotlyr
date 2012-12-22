@@ -13,7 +13,7 @@
  */
 
 div#content {
-  width: 25%;
+  max-width: 480px;
 }
 
 h1#pageTitle {
