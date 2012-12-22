@@ -2,13 +2,14 @@
   <p id="notice"><%= notice %></p>
   <h1 id="pageTitle">Knotlyr</h1>
 
+  <div id="selectListWrapper" style="border-color:<%=@list.color%>">
   <%= select_tag "lists", options_from_collection_for_select(@lists, "id", "name", @list.id) %>
-
-  <div id="addNewItemWrapper">
-    <input type="text" id="addItemName"/><button id="addItemBtn">Add</button>
   </div>
 
   <div id="listWrapper">
+    <div id="addNewItemWrapper">
+      <input type="text" id="addItemName"/><button id="addItemBtn">Add</button>
+    </div>
     <ul id="itemList">
       <% if @list.items.empty? %>
         <li id="emptyItem">List is empty.</li>

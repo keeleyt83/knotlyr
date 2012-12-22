@@ -13,7 +13,9 @@
 
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name %><br/></br/>
+    <%= f.label :color %><br />
+    <input type="color" id="list_color" name="list[color]" value="<%= @list.color %>" /><br/>
   </div>
   <div class="actions">
     <%= f.submit %>
