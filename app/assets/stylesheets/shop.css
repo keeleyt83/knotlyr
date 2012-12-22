@@ -5,7 +5,7 @@ button {
 div#contentWrapper {
   border-width: 15px;
   border-style: solid;
-  width: 280px;
+  width: 275px;
 }
 
 div#content {
@@ -19,6 +19,7 @@ h1#pageTitle {
   font-size: 30px;
   border-bottom: 3px solid lightBlue;
   padding-left: 5px;
+  line-height: 10px;
 }
 
 div#listWrapper {
@@ -35,7 +36,7 @@ div#addNewItemWrapper {
 
 select#lists {
   width: 100%;
-  font-size: 12px;
+  font-size: 14px;
   border-color: #999;
 }
 
@@ -72,7 +73,7 @@ ul#itemList > li > a:hover {
 }
 
 input#addItemName {
-  width: 195px;
+  width: 185px;
 }
 
 button#addItemBtn {
