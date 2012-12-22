@@ -1,3 +1,7 @@
+button {
+  font-size: 13px;
+}
+
 div#contentWrapper {
   margin: 5px;
   border-width: 15px;
@@ -32,7 +36,7 @@ div#addNewItemWrapper {
 
 select#lists {
   width: 100%;
-  font-size: 13px;
+  font-size: 16px;
   border-color: #999;
 }
 
