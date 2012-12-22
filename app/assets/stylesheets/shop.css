@@ -3,10 +3,9 @@ button {
 }
 
 div#contentWrapper {
-  margin: 5px;
   border-width: 15px;
   border-style: solid;
-  width: 320px;
+  width: 300px;
 }
 
 div#content {
@@ -73,7 +72,7 @@ ul#itemList > li > a:hover {
 }
 
 input#addItemName {
-  width: 210px;
+  width: 195px;
 }
 
 button#addItemBtn {
