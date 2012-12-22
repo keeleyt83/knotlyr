@@ -73,10 +73,10 @@ ul#itemList > li > a:hover {
 }
 
 input#addItemName {
-  width: 185px;
+  width: 175px;
 }
 
 button#addItemBtn {
-  width: 40px;
+  width: 50px;
   margin-left: 10px;
 }
