@@ -1,12 +1,17 @@
+/*
+  TODO: Use percentages or ems. Make max width one dimension of ipad.
+*/
+
 button {
   font-size: 12px;
 }
 
 div#contentWrapper {
-  border-width: 15px;
+  border-width: 10px;
   border-style: solid;
   /*width: 275px;*/
-  width: 97%;
+  width: 90%;
+  max-width: 768px;
 }
 
 div#content {
@@ -75,7 +80,7 @@ ul#itemList > li > a:hover {
 
 input#addItemName {
   /*width: 175px;*/
-  width: 90%;
+  width: 88%;
 }
 
 button#addItemBtn {
