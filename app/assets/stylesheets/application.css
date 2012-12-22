@@ -13,7 +13,7 @@
  */
 
 /* Try to prevent window rotation. Annoying when you are shopping... */
-.orientleft #shell {
+/*.orientleft #shell {
     -webkit-transform: rotate(-90deg);
     -webkit-transform-origin:160px 160px;
 }
@@ -21,4 +21,4 @@
 .orientright #shell {
     -webkit-transform: rotate(90deg);
     -webkit-transform-origin:230px 230px;
-}
+}*/

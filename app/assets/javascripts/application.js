@@ -21,7 +21,7 @@ $.ajaxSetup({
 });
 
 // Try to prevent window rotation. Annoying when you are shopping...
-window.addEventListener('onorientationchange', function () {
+/*window.addEventListener('onorientationchange', function () {
   if (window.orientation == -90) {
     document.getElementById('orient').className = 'orientright';
   }
@@ -31,4 +31,4 @@ window.addEventListener('onorientationchange', function () {
   if (window.orientation == 0) {
     document.getElementById('orient').className = '';
   }
-}, true);
+}, true);*/
