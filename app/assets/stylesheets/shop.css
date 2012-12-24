@@ -1,9 +1,11 @@
-/*
-  TODO: Use percentages or ems. Make max width one dimension of ipad.
-*/
-
 button {
   font-size: 12px;
+}
+
+input#qty {
+  float: left;
+  margin-left: 10px;
+  width: 30px;
 }
 
 div#selectListWrapper {
@@ -43,7 +45,7 @@ div#addNewItemWrapper {
 }
 
 div#addNewItemWrapper > div {
-  margin-right: 80px;
+  margin-right: 100px;
 }
 
 select#lists {
@@ -71,6 +73,20 @@ ul#itemList > li {
   border-bottom: 1px solid lightgray;
 }
 
+ul#itemList > li > div {
+  margin-right: 60px;
+}
+
+span.itemName {
+  float: left;
+  width: 100%;
+}
+
+span.qty {
+  float: left;
+  width: 30px;
+}
+
 input#addItemName {
   float: left;
   width: 100%;
@@ -78,5 +94,5 @@ input#addItemName {
 
 button#addItemBtn {
   float: right;
-  width: 5.0em;
+  width: 3.25em;
 }

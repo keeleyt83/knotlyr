@@ -41,14 +41,17 @@ var shop = {
     var newItemName = $.trim($("#addItemName").val());
     if (newItemName != "") {
       var listId = $("#lists").val();
-      $.create("/lists/" + listId + "/items/", { item : { list_id : listId,  name : $("#addItemName").val() } },
+      $.create("/lists/" + listId + "/items/", { item : { list_id : listId,  name : $("#addItemName").val(), quantity : $("#qty").val() } },
           function(response) {
         $("#emptyItem").remove();
         // Create new item.
         $("#itemList")
           .append($("<li id='item-" + response.id + "'>")
-            .append($("<span class='itemName'>")
-              .append(response.name))
+            .append($("<div>")
+              .append($("<span class='itemName'>")
+                .append(response.name)))
+            .append($("<span class='itemQty'>")
+              .append(response.quantity))
             .append("<button class='deleteItem'>X</button>"));
       }, "json");
     }

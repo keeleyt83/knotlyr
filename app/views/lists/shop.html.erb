@@ -12,7 +12,11 @@
 
     <div id="listWrapper">
       <div id="addNewItemWrapper">
-        <div><input type="text" id="addItemName"/></div><button id="addItemBtn">Add</button><br/>
+        <div>
+          <input type="text" id="addItemName"/>
+        </div>
+        <input type="number" id="qty" min="1" max="99" value="1" />
+        <button id="addItemBtn">+</button><br/>
       </div>
       <ul id="itemList">
         <% if @list.items.empty? %>
@@ -20,7 +24,10 @@
         <% else %>
           <% @list.items.each do |item| %>
               <li id="item-<%= item.id %>">
-                <span class="itemName"><%= item.name %></span>
+                <div>
+                  <span class="itemName"><%= item.name %></span>
+                </div>
+                <span class="itemQty"><%= item.quantity %></span>
                 <button class='deleteItem'>X</button>
               </li>
           <% end %>
