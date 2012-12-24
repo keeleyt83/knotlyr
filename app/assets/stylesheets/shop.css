@@ -5,6 +5,13 @@ button {
 input#qty {
   float: left;
   margin-left: 10px;
+}
+
+input[type=text]#qty {
+  width: 20px;
+}
+
+input[type=number]#qty {
   width: 30px;
 }
 
@@ -38,6 +45,7 @@ div#listWrapper {
 
 button.deleteItem {
   float: right;
+  width: 30px;
 }
 
 div#addNewItemWrapper {
@@ -46,6 +54,7 @@ div#addNewItemWrapper {
 
 div#addNewItemWrapper > div {
   margin-right: 105px;
+  /*margin-right: 90px;*/
 }
 
 select#lists {
@@ -94,5 +103,6 @@ input#addItemName {
 
 button#addItemBtn {
   float: right;
-  width: 3.25em;
+  width: 30px;
+  margin-right: 6px;
 }

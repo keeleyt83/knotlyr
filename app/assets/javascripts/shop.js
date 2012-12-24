@@ -8,7 +8,7 @@ var shop = {
   init:function() {
     $("#addItemName").focus();
 
-    $("#addItemName").keypress(function(e) {
+    $("#addNewItemWrapper").keypress(function(e) {
       if (e.which == 13) {
         shop.addItem();
         return false;
@@ -56,6 +56,7 @@ var shop = {
       }, "json");
     }
     $("#addItemName").val("");
+    $("#qty").val("1");
   }
 };
 
