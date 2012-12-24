@@ -1,38 +1,45 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" / >
 
-<div id="contentWrapper">
-  <div id="content">
-    <p id="notice"><%= notice %></p>
-    <h1 id="pageTitle">Knotlyr</h1>
+<div id="backgroundGradient"
+  style="background-image:
+    -webkit-linear-gradient(transparent 50%, rgba(<%= @list.color %>, .5) 50%,
+     rgba(<%= @list.color %>, .5)),
+    -webkit-linear-gradient(0deg, transparent 50%, rgba(<%= @list.color %>, .5) 50%,
+     rgba(<%= @list.color %>, .5));">
+  <div id="contentWrapper">
+    <div id="content">
+      <p id="notice"><%= notice %></p>
+      <h1 id="pageTitle">Knotlyr</h1>
 
-    <div id="selectListWrapper" style="background-color:<%=@list.color%>">
-    <%= select_tag "lists", options_from_collection_for_select(@lists, "id", "name", @list.id) %>
-    </div>
-
-    <div id="listWrapper">
-      <div id="addNewItemWrapper">
-        <div>
-          <input type="text" id="addItemName"/>
-        </div>
-        <input type="number" maxlength="2" id="qty" min="1" max="99" value="1" />
-        <button id="addItemBtn">+</button><br/>
+      <div id="selectListWrapper">
+      <%= select_tag "lists", options_from_collection_for_select(@lists, "id", "name", @list.id) %>
       </div>
-      <ul id="itemList">
-        <% if @list.items.empty? %>
-          <li id="emptyItem">List is empty.</li>
-        <% else %>
-          <% @list.items.each do |item| %>
-              <li id="item-<%= item.id %>">
-                <div>
-                  <span class="itemName"><%= item.name %></span>
-                </div>
-                <span class="itemQty"><%= item.quantity %></span>
-                <button class='deleteItem'>X</button>
-              </li>
+
+      <div id="listWrapper">
+        <div id="addNewItemWrapper">
+          <div>
+            <input type="text" id="addItemName"/>
+          </div>
+          <input type="number" maxlength="2" id="qty" min="1" max="99" value="1" />
+          <button id="addItemBtn">+</button><br/>
+        </div>
+        <ul id="itemList">
+          <% if @list.items.empty? %>
+            <li id="emptyItem">List is empty.</li>
+          <% else %>
+            <% @list.items.each do |item| %>
+                <li id="item-<%= item.id %>">
+                  <div>
+                    <span class="itemName"><%= item.name %></span>
+                  </div>
+                  <span class="itemQty"><%= item.quantity %></span>
+                  <button class='deleteItem'>X</button>
+                </li>
+            <% end %>
           <% end %>
-        <% end %>
-      </ul>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

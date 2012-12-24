@@ -15,9 +15,42 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %><br/></br/>
     <%= f.label :color %><br />
-    <input type="color" id="list_color" name="list[color]" value="<%= @list.color %>" /><br/>
+    <input type="color" id="colorPicker" value="<%= @list.color %>" /><br/>
+    <%= f.hidden_field :color %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+<script type="text/javascript">
+  /* Hex to RGB and back again. These should probably be in a separate file... */
+  function rgb2hex(rgb){
+   rgb = rgb.match(/^(\d+),\s*(\d+),\s*(\d+)$/);
+   hex = "#" +
+    ("0" + parseInt(rgb[1],10).toString(16)).slice(-2) +
+    ("0" + parseInt(rgb[2],10).toString(16)).slice(-2) +
+    ("0" + parseInt(rgb[3],10).toString(16)).slice(-2);
+
+    return hex;
+  }
+
+  function hex2rgb(h) {
+    var r = parseInt((cutHex(h)).substring(0,2),16);
+    var g = parseInt((cutHex(h)).substring(2,4),16);
+    var b = parseInt((cutHex(h)).substring(4,6),16);
+    return r + ',' + g + ',' + b;
+  }
+
+  function cutHex(h) {return (h.charAt(0)=="#") ? h.substring(1,7):h}
+
+  $(document).ready(function() {
+    // Take color value and put it in color picker.
+    var colorRGB = $("#list_color").val();
+    $("#colorPicker").val(rgb2hex(colorRGB));
+  });
+
+  $("form.edit_list").submit(function() {
+    $("#list_color").val(hex2rgb($("#colorPicker").val()));
+  });
+</script>
