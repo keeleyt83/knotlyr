@@ -3,13 +3,6 @@
   JS for shop screen.
 */
 
-/*
-  TODO:
-    - autocomplete
-    - http://amillionbetterthings.com/2010/06/24/rails-nested-forms-with-ajax-add-and-remove/
-    - mobile is frakked? http://stackoverflow.com/questions/8069131/using-jquery-mobile-and-rails-restful-controller-actions
-*/
-
 var shop = {
 
   init:function() {
