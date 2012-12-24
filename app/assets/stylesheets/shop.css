@@ -7,6 +7,8 @@ button {
 }
 
 div#contentWrapper {
+  margin-left: auto;
+  margin-right: auto;
   border-width: 10px;
   border-style: solid;
   width: 95%;
@@ -39,6 +41,10 @@ div#addNewItemWrapper {
   margin-bottom: 15px;
 }
 
+div#addNewItemWrapper > div {
+  margin-right: 80px;
+}
+
 select#lists {
   width: 100%;
   font-size: 14px;
@@ -65,11 +71,11 @@ ul#itemList > li {
 }
 
 input#addItemName {
-  width: 70%;
+  float: left;
+  width: 100%;
 }
 
 button#addItemBtn {
-  width: 20%;
-  margin-left: 0.714em;
-  max-width: 3.571em;
+  float: right;
+  width: 5.0em;
 }
