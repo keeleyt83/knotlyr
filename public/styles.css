@@ -13,7 +13,7 @@ body {
   background-image: linear-gradient(transparent 50%, RGBA(90, 235, 173, .5) 50%, RGBA(90, 235, 173, .5)), linear-gradient(0deg, transparent 50%, RGBA(90, 235, 173, .5) 50%, RGBA(90, 235, 173, .5));
 }
 
-p#intro {
+#intro {
   padding-top: 25px;
   padding-left: 10px;
 }

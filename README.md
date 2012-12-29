@@ -19,7 +19,7 @@ Managing lists is accomplished by navigating to the ["/lists"]() URL path. The s
 Knotlyr was not designed for use with multiple users, so you will need to deploy your own instance. First, you will need a Git client and a github account. A good walkthrough for Windows is [here](http://kylecordes.com/2008/git-windows-go). After you have a local copy of the repo, you will need to host it somewhere. I suggest [Heroku](http://www.heroku.com). The super-simple instructions are located [here](http://ruby.railstutorial.org/chapters/beginning#sec-heroku_setup).
 
 ###Known Issues
-As I mentioned above, Knotlyr performs best in webkit browsers. It is fully functional in Firefox, Internet Explorer, and other mobile devices but isn't as aestically pleasing.
+As I mentioned above, Knotlyr performs best in webkit browsers. It is fully functional in Firefox, Internet Explorer, and other mobile devices but isn't as aestically pleasing. Also, when choosing a color for a list, the HTML 5 color is utilized. If your browser doesn't support the HMTL 5 color picker, you can enter a CSS color hex code instead.
 
 ###Thanks
 A quick thank-you to [Solmetra](http://www.solmetra.com/en/), the company that provides [Knotler](http://knotler.com/) for free. Thanks for making your application available to all.
