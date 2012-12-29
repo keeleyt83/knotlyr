@@ -1,0 +1,47 @@
+body {
+  -webkit-background-size: 30px 30px;
+  -moz-background-size: 30px 30px;
+  background-size: 30px 30px;
+  background-color: white;
+  font-family: sans-serif;
+
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(.5, transparent), color-stop(.5, RGBA(90, 235, 173, .5)), to(RGBA(90, 235, 173, .5))), -webkit-gradient(linear, 0 0, 100% 0, color-stop(.5, transparent), color-stop(.5, RGBA(90, 235, 173, .5)), to(RGBA(90, 235, 173, .5)));
+  background-image: -webkit-linear-gradient(transparent 50%, RGBA(90, 235, 173, .5) 50%, RGBA(90, 235, 173, .5)), -webkit-linear-gradient(0deg, transparent 50%, RGBA(90, 235, 173, .5) 50%, RGBA(90, 235, 173, .5));
+  background-image: -moz-linear-gradient(transparent 50%, RGBA(90, 235, 173, .5) 50%, RGBA(90, 235, 173, .5)), -moz-linear-gradient(0deg, transparent 50%, RGBA(90, 235, 173, .5) 50%, RGBA(90, 235, 173, .5));
+  background-image: -ms-linear-gradient(transparent 50%, RGBA(90, 235, 173, .5) 50%, RGBA(90, 235, 173, .5)), -ms-linear-gradient(0deg, transparent 50%, RGBA(90, 235, 173, .5) 50%, RGBA(90, 235, 173, .5));
+  background-image: -o-linear-gradient(transparent 50%, RGBA(90, 235, 173, .5) 50%, RGBA(90, 235, 173, .5)), -o-linear-gradient(0deg, transparent 50%, RGBA(90, 235, 173, .5) 50%, RGBA(90, 235, 173, .5));
+  background-image: linear-gradient(transparent 50%, RGBA(90, 235, 173, .5) 50%, RGBA(90, 235, 173, .5)), linear-gradient(0deg, transparent 50%, RGBA(90, 235, 173, .5) 50%, RGBA(90, 235, 173, .5));
+}
+
+p#intro {
+  padding-top: 25px;
+  padding-left: 10px;
+}
+
+div#instructions {
+  padding-left: 20px;
+}
+
+div#contentWrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 450px;
+  background-color: white;
+  -moz-box-shadow: 2px 2px 15px gray;
+  -webkit-box-shadow: 2px 2px 15px gray;
+  box-shadow: 2px 2px 15px gray;
+  border: 1px solid #D5D5D5;
+}
+
+div#content {
+  height: 220px;
+  padding: 20px;
+}
+
+h1#pageTitle {
+  font-family: 'Mrs Saint Delafield', cursive;
+  font-size: 30px;
+  border-bottom: 3px solid gold;
+  padding-left: 5px;
+  line-height: 10px;
+}
