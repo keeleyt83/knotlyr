@@ -3,10 +3,6 @@ body {
   background-color: white;
 }
 
-.foo{
-  background-image: -moz-linear-gradient(transparent 50%, rgba(200, 0, 0, 0.5) 50%, rgba(200, 0, 0, 0.5)), -moz-linear-gradient(0deg, transparent 50%, rgba(200, 0, 0, 0.5) 50%, rgba(200, 0, 0, 0.5));
-}
-
 input#qty {
   float: left;
   margin-left: 10px;
