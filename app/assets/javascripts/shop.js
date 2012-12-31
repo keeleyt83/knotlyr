@@ -56,6 +56,7 @@ var shop = {
       }, "json");
     }
     $("#addItemName").val("");
+    $("#addItemName").focus();
     $("#qty").val("1");
   }
 };
