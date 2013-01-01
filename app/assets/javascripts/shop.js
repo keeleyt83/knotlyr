@@ -23,6 +23,10 @@ var shop = {
       window.location.href="/shop/" + $("#lists").val();
     });
 
+    $("#itemList").on("change", "input.itemQty", function() {
+
+    });
+
     $("#itemList").on("click", "button.deleteItem", function() {
       var itemId = + $(this).parent().attr("id").split("-")[1];
       var listId = $("#lists").val();
@@ -58,6 +62,13 @@ var shop = {
     $("#addItemName").val("");
     $("#addItemName").focus();
     $("#qty").val("1");
+  },
+
+  updateItemQty: function(itemLi) {
+    var listId = $("#lists").val();
+    var itemId = $(itemLi).find("");
+    var qty =
+    $.update("/lists/" + listId + "/items/" + itemId, { quantity : $("#qty").val() });
   }
 };
 

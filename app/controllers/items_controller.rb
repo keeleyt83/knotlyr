@@ -25,4 +25,18 @@ class ItemsController < ApplicationController
       format.json { render :json => @item }
     end
   end
+
+  # PUT /items/1
+  # PUT /items/1.json
+  def update
+    @item = Item.find(params[:id])
+
+    respond_to do |format|
+      if @item.update_attributes(params[:list])
+        format.json { render :json => @item }
+      else
+        format.json { render :json => @item.errors, status: :unprocessable_entity}
+      end
+    end
+  end
 end
