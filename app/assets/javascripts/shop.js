@@ -24,11 +24,14 @@ var shop = {
     });
 
     $("#itemList").on("change", "input.itemQty", function() {
-
+      var itemId = $(this).parent().attr("id").split("-")[1];
+      var listId = $("#lists").val();
+      var qty = $(this).parent().find("input.itemQty").val();
+      $.update("/lists/" + listId + "/items/" + itemId, { item : { quantity : qty } });
     });
 
     $("#itemList").on("click", "button.deleteItem", function() {
-      var itemId = + $(this).parent().attr("id").split("-")[1];
+      var itemId = $(this).parent().attr("id").split("-")[1];
       var listId = $("#lists").val();
       $.destroy({ url: "/lists/" + listId + "/items/" + itemId, success: function(response) {
           $("li#item-" + itemId).remove();
@@ -54,21 +57,13 @@ var shop = {
             .append($("<div>")
               .append($("<span class='itemName'>")
                 .append(response.name)))
-            .append($("<span class='itemQty'>")
-              .append(response.quantity))
+            .append($("<input class='itemQty' type='number' maxlength='2' min='1' max='99' value='" + response.quantity + "' />"))
             .append("<button class='deleteItem'>X</button>"));
       }, "json");
     }
     $("#addItemName").val("");
     $("#addItemName").focus();
     $("#qty").val("1");
-  },
-
-  updateItemQty: function(itemLi) {
-    var listId = $("#lists").val();
-    var itemId = $(itemLi).find("");
-    var qty =
-    $.update("/lists/" + listId + "/items/" + itemId, { quantity : $("#qty").val() });
   }
 };
 

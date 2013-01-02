@@ -4,16 +4,16 @@ body {
   background-color: white;
 }
 
-input#qty {
+input.itemQty {
   float: left;
   margin-left: 10px;
 }
 
-input[type=text]#qty {
+input[type=text].itemQty {
   width: 20px;
 }
 
-input[type=number]#qty {
+input[type=number].itemQty {
   width: 30px;
 }
 
@@ -59,7 +59,7 @@ div#addNewItemWrapper {
 }
 
 div#addNewItemWrapper > div {
-  margin-right: 105px;
+  margin-right: 102px;
   /*margin-right: 90px;*/
 }
 
@@ -89,7 +89,7 @@ ul#itemList > li {
 }
 
 ul#itemList > li > div {
-  margin-right: 60px;
+  margin-right: 90px;
 }
 
 span.itemName {

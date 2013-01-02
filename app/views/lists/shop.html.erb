@@ -22,7 +22,7 @@
           <div>
             <input type="text" id="addItemName"/>
           </div>
-          <input type="number" maxlength="2" id="qty" min="1" max="99" value="1" />
+          <input class="itemQty" type="number" maxlength="2" id="qty" min="1" max="99" value="1" />
           <button id="addItemBtn">+</button><br/>
         </div>
         <ul id="itemList">
@@ -34,8 +34,8 @@
                   <div>
                     <span class="itemName"><%= item.name %></span>
                   </div>
-                  <span class="itemQty"><%= item.quantity %></span>
-                  <button class='deleteItem'>X</button>
+                  <input class="itemQty" type="number" maxlength="2" min="1" max="99" value="<%= item.quantity %>" />
+                  <button class="deleteItem">X</button>
                 </li>
             <% end %>
           <% end %>

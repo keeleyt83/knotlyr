@@ -32,7 +32,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
 
     respond_to do |format|
-      if @item.update_attributes(params[:list])
+      if @item.update_attributes(params[:item])
         format.json { render :json => @item }
       else
         format.json { render :json => @item.errors, status: :unprocessable_entity}
