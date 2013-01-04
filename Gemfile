@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'rufus-scheduler', '2.0.7'
+
 gem 'rails', '3.2.8'
 
 gem 'bootstrap-sass', '2.1'
