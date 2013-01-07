@@ -32,10 +32,12 @@
             <% @list.items.each do |item| %>
                 <li id="item-<%= item.id %>">
                   <div>
-                    <span class="itemName"><%= item.name %></span>
+                    <div>
+                      <span class="itemName"><%= item.name %></span>
+                    </div>
+                    <input class="itemQty" type="number" maxlength="2" min="1" max="99" value="<%= item.quantity %>" />
+                    <button class="deleteItem">X</button>
                   </div>
-                  <input class="itemQty" type="number" maxlength="2" min="1" max="99" value="<%= item.quantity %>" />
-                  <button class="deleteItem">X</button>
                 </li>
             <% end %>
           <% end %>

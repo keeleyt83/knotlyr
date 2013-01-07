@@ -80,15 +80,18 @@ ul#itemList {
 
 ul#itemList > li {
   background-color: #e9e9e9;
-  line-height: 1.786em;
-  height: 1.786em;
+  padding: 1% 1%;
+  height: 1.8em;
   list-style-type: none;
-  padding: 0 5px;
   border-top: 1px solid lightgray;
   border-bottom: 1px solid lightgray;
 }
 
 ul#itemList > li > div {
+  padding: .3% 0;
+}
+
+ul#itemList > li > div > div {
   margin-right: 90px;
 }
 
