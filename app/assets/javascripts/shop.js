@@ -31,7 +31,7 @@ var shop = {
     });
 
     $("#itemList").on("click", "button.deleteItem", function() {
-      var itemId = $(this).parent().attr("id").split("-")[1];
+      var itemId = $(this).closest("li").attr("id").split("-")[1];
       var listId = $("#lists").val();
       $.destroy({ url: "/lists/" + listId + "/items/" + itemId, success: function(response) {
           $("li#item-" + itemId).remove();
@@ -55,10 +55,11 @@ var shop = {
         $("#itemList")
           .append($("<li id='item-" + response.id + "'>")
             .append($("<div>")
-              .append($("<span class='itemName'>")
-                .append(response.name)))
-            .append($("<input class='itemQty' type='number' maxlength='2' min='1' max='99' value='" + response.quantity + "' />"))
-            .append("<button class='deleteItem'>X</button>"));
+              .append($("<div>")
+                .append($("<span class='itemName'>")
+                  .append(response.name)))
+              .append($("<input class='itemQty' type='number' maxlength='2' min='1' max='99' value='" + response.quantity + "' />"))
+            .append("<button class='deleteItem'>X</button>")));
       }, "json");
     }
     $("#addItemName").val("");
