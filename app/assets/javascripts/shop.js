@@ -24,7 +24,7 @@ var shop = {
     });
 
     $("#itemList").on("change", "input.itemQty", function() {
-      var itemId = $(this).parent().attr("id").split("-")[1];
+      var itemId = $(this).closest("li").attr("id").split("-")[1];
       var listId = $("#lists").val();
       var qty = $(this).parent().find("input.itemQty").val();
       $.update("/lists/" + listId + "/items/" + itemId, { item : { quantity : qty } });
