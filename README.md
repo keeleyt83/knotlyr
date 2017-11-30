@@ -5,9 +5,6 @@
 ### Overview
 Knotlyr is a simple shopping list application implemented with Ruby on Rails. It was designed as a personal replacement for [Knotler](http://knotler.com/), an excellent but aging shopping list app. Updates to Knotlyr can be made from a PC, smartphone, iPod Touch, iPad, or other web-enabled device. Knotlyr was designed specifically with webkit-based browsers in mind, so it performs best in Chrome or Safari.
 
-### Demo
-A demo of Knotlyr is located [here](http://knotlyr.herokuapp.com).
-
 ### Features
 The functionality of Knotlyr revolves around lists and items. Knotlyr gives you the ability to create individual lists for each store you frequent and each list has a color associated with it, so you always know which list you are viewing.
 
